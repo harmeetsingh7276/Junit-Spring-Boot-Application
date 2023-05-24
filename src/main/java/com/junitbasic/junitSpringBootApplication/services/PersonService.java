@@ -9,9 +9,13 @@ import java.util.List;
 
 @Service
 public class PersonService {
-    @Autowired
     private PersonRepository personRepository;
+
     public List<Person> getAllPerson() {
         return this.personRepository.findAll();
+    }
+
+    public PersonService(PersonRepository repo) {
+        this.personRepository = repo;
     }
 }
